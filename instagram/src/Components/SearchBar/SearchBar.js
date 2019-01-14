@@ -3,7 +3,7 @@ import "./SearchBar.css";
 
 const SearchBar = () => {
   return (
-    <div className="searchBar-container">
+    <div className="searchBar">
       <div className="logo-header">
         <i className="logo fab fa-instagram" />
         <hr />
