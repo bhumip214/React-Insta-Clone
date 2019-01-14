@@ -1,0 +1,34 @@
+.searchBar-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-size: 20px;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+.logo-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 160px;
+}
+.logo {
+  padding: 10px;
+  font-size: 30px;
+}
+
+h1 {
+  font-size: 20px;
+}
+input {
+  width: 150px;
+  height: 20px;
+}
+
+.searchBar-icons {
+  display: flex;
+  font-size: 20px;
+  width: 120px;
+  justify-content: space-between;
+  color: grey;
+}
