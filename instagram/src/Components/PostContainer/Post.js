@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./Post.css";
+import CommentSection from "../CommentSection/CommentSection";
 
 function Post(props) {
   return (
@@ -11,7 +12,7 @@ function Post(props) {
           className="post-thumb"
           src={props.post.thumbnailUrl}
         />
-        <h4>{props.post.username}</h4>
+        <h4 className="post-username">{props.post.username}</h4>
       </div>
 
       <div className="post-image">
@@ -21,6 +22,8 @@ function Post(props) {
           src={props.post.imageUrl}
         />
       </div>
+
+      <CommentSection comments={props.post.comments} likes={props.post.likes} />
     </div>
   );
 }

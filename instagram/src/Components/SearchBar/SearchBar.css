@@ -1,10 +1,10 @@
 .searchBar {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
-  font-size: 20px;
+  padding: 10px 200px 15px;
+  font-size: 25px;
   align-items: center;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(187, 186, 186);
 }
 .logo-header {
   display: flex;
@@ -14,18 +14,20 @@
 }
 .logo {
   padding: 10px;
-  margin-right: 5px;
+  margin-right: 8px;
   font-size: 40px;
   text-align: center;
 }
 
 h1 {
   font-size: 25px;
-  padding-left: 15px;
+  margin-left: 15px;
 }
-input {
-  width: 150px;
-  height: 20px;
+.search-input {
+  width: 220px;
+  font-size: 14px;
+  text-align: center;
+  padding: 2px;
 }
 
 .searchBar-icons {

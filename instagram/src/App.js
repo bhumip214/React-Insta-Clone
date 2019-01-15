@@ -6,8 +6,6 @@ import dummyData from "./dummy-data";
 import SearchBar from "./Components/SearchBar/SearchBar";
 import PostList from "./Components/PostContainer/PostList";
 
-console.log(dummyData);
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -17,6 +15,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(dummyData);
     return (
       <div className="App">
         <SearchBar />

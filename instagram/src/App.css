@@ -1,4 +1,6 @@
 .App {
   margin: 0 auto;
-  width: 800px;
+}
+hr {
+  border-color: rgb(247, 247, 247);
 }

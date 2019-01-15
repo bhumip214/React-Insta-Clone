@@ -9,8 +9,8 @@ const SearchBar = () => {
         <hr />
         <h1>Instagram</h1>
       </div>
-      <div className="search-input">
-        <input type="text" placeholder=" Search" />
+      <div>
+        <input className="search-input" type="text" placeholder=" Search" />
       </div>
       <div className="searchBar-icons">
         <div className="social">

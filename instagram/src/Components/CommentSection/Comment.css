@@ -1,0 +1,28 @@
+.comment-section {
+  padding: 10px;
+}
+.comment-action-icons {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.comment-heart {
+  margin-right: 10px;
+}
+.comment-likes {
+  font-size: 14px;
+}
+.comment {
+  font-size: 14px;
+}
+.comment-username {
+  margin-right: 5px;
+}
+.comments {
+  margin: 12px 0 15px;
+}
+.comment-input {
+  width: 92%;
+  margin: 8px;
+  border: none;
+  font-size: 14px;
+}
