@@ -12,9 +12,9 @@ const Comment = props => {
 
 Comment.propTypes = {
   comment: PropTypes.shape({
-    text: PropTypes.string,
-    username: PropTypes.string
-  })
+    text: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired
+  }).isRequired
 };
 
 export default Comment;

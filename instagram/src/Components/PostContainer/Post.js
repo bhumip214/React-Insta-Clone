@@ -31,5 +31,19 @@ function Post(props) {
     </div>
   );
 }
-
+Post.propTypes = {
+  post: PropTypes.shape({
+    thumbnailUrl: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
+    imageUrl: PropTypes.string.isRequired,
+    comments: PropTypes.arrayOf(
+      PropTypes.shape({
+        text: PropTypes.string.isRequired,
+        username: PropTypes.string.isRequired
+      })
+    ).isRequired,
+    likes: PropTypes.number.isRequired,
+    timestamp: PropTypes.string.isRequired
+  }).isRequired
+};
 export default Post;

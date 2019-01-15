@@ -18,6 +18,7 @@ function CommentSection(props) {
           return <Comment comment={comment} />;
         })}
       </div>
+
       <div className="comment-timestamp" title={props.timestamp}>
         {moment(props.timestamp, "MMMM Do YYYY, h:mm:ss a").fromNow()}
       </div>
@@ -36,7 +37,14 @@ function CommentSection(props) {
 }
 
 CommentSection.propTypes = {
-  comments: PropTypes.array
+  comments: PropTypes.arrayOf(
+    PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      username: PropTypes.string.isRequired
+    })
+  ).isRequired,
+  likes: PropTypes.number.isRequired,
+  timestamp: PropTypes.string.isRequired
 };
 
 export default CommentSection;
