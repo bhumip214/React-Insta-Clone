@@ -1,7 +1,7 @@
 import React from "react";
 import "./SearchBar.css";
 
-const SearchBar = () => {
+const SearchBar = props => {
   return (
     <div className="searchBar">
       <div className="logo-header">
@@ -10,7 +10,13 @@ const SearchBar = () => {
         <h1>Instagram</h1>
       </div>
       <div>
-        <input className="search-input" type="text" placeholder=" Search" />
+        <input
+          className="search-input"
+          onChange={props.handleSearchInput}
+          type="text"
+          value={props.searchInputValue}
+          placeholder="Search"
+        />
       </div>
       <div className="searchBar-icons">
         <div className="social">

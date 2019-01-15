@@ -9,15 +9,33 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      instaPosts: dummyData
+      instaPosts: [],
+      searchInputValue: ""
     };
   }
+  componentDidMount() {
+    this.setState({ instaPosts: dummyData });
+  }
+
+  handleSearchInput = event => {
+    console.log(event.target.value);
+    this.setState({ searchInputValue: event.target.value });
+  };
 
   render() {
+    let filterPosts = this.state.instaPosts.filter(post => {
+      return post.username
+        .toLowerCase()
+        .includes(this.state.searchInputValue.toLowerCase());
+    });
+
     return (
       <div className="App">
-        <SearchBar />
-        <PostList posts={this.state.instaPosts} />
+        <SearchBar
+          handleSearchInput={this.handleSearchInput}
+          searchInputValue={this.state.searchValue}
+        />
+        <PostList posts={filterPosts} />
       </div>
     );
   }

@@ -35,7 +35,7 @@ class CommentSection extends React.Component {
     this.setState({
       comments: [
         ...this.state.comments,
-        { username: "User", text: this.state.newComment }
+        { username: "Username", text: this.state.newComment }
       ],
       newComment: ""
     });
@@ -77,6 +77,7 @@ class CommentSection extends React.Component {
             name="comment"
             value={this.state.newComment}
             placeholder="Add comment... "
+            autoComplete="off"
           />
           <i className="fas fa-ellipsis-h" />
         </form>
