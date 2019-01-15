@@ -15,7 +15,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(dummyData);
     return (
       <div className="App">
         <SearchBar />

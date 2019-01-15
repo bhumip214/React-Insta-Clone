@@ -4,36 +4,63 @@ import Comment from "./Comment";
 import "./Comment.css";
 import moment from "moment";
 
-function CommentSection(props) {
-  return (
-    <div className="comment-section">
-      <div className="comment-action-icons">
-        <i className="comment-heart far fa-heart" />
-        <i className="far fa-comment" />
-      </div>
-      <strong className="comment-likes">{props.likes} likes</strong>
+class CommentSection extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      comments: props.comments,
+      likes: props.likes,
+      userLiked: false
+    };
+  }
 
-      <div className="comments">
-        {props.comments.map(comment => {
-          return <Comment comment={comment} />;
-        })}
-      </div>
+  handleLike = () => {
+    if (this.state.userLiked) {
+      this.setState({ likes: this.state.likes - 1, userLiked: false });
+    } else {
+      this.setState({ likes: this.state.likes + 1, userLiked: true });
+    }
+  };
 
-      <div className="comment-timestamp" title={props.timestamp}>
-        {moment(props.timestamp, "MMMM Do YYYY, h:mm:ss a").fromNow()}
-      </div>
+  render() {
+    return (
+      <div className="comment-section">
+        <div className="comment-action-icons">
+          <i
+            onClick={this.handleLike}
+            className={
+              this.state.userLiked
+                ? "comment-heart fas fa-heart"
+                : "comment-heart far fa-heart"
+            }
+            style={{ color: this.state.userLiked ? "red" : "" }}
+          />
+          <i className="far fa-comment" />
+        </div>
+        <strong className="comment-likes">{this.state.likes} likes</strong>
 
-      <hr />
-      <form>
-        <input
-          className="comment-input"
-          type="text"
-          placeholder="Add comment... "
-        />
-        <i className="fas fa-ellipsis-h" />
-      </form>
-    </div>
-  );
+        <div className="comments">
+          {this.state.comments.map(comment => {
+            return <Comment comment={comment} />;
+          })}
+        </div>
+
+        <div className="comment-timestamp" title={this.props.timestamp}>
+          {moment(this.props.timestamp, "MMMM Do YYYY, h:mm:ss a").fromNow()}
+        </div>
+
+        <hr />
+        <form onSubmit="">
+          <input
+            className="comment-input"
+            type="text"
+            placeholder="Add comment... "
+          />
+          <i className="fas fa-ellipsis-h" />
+        </form>
+      </div>
+    );
+  }
 }
 
 CommentSection.propTypes = {
