@@ -13,7 +13,7 @@ function PostList(props) {
 }
 
 PostList.propTypes = {
-  instaPosts: PropTypes.array
+  posts: PropTypes.array
 };
 
 export default PostList;

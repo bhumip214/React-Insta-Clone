@@ -23,7 +23,11 @@ function Post(props) {
         />
       </div>
 
-      <CommentSection comments={props.post.comments} likes={props.post.likes} />
+      <CommentSection
+        comments={props.post.comments}
+        likes={props.post.likes}
+        timestamp={props.post.timestamp}
+      />
     </div>
   );
 }

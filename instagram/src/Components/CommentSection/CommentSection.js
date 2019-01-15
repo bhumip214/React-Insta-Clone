@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Comment from "./Comment";
 import "./Comment.css";
+import moment from "moment";
 
 function CommentSection(props) {
   return (
@@ -17,6 +18,10 @@ function CommentSection(props) {
           return <Comment comment={comment} />;
         })}
       </div>
+      <div className="comment-timestamp" title={props.timestamp}>
+        {moment(props.timestamp, "MMMM Do YYYY, h:mm:ss a").fromNow()}
+      </div>
+
       <hr />
       <form>
         <input
