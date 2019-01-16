@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import dummyData from "./dummy-data";
 import PostsPage from "./Components/PostContainer/PostsPage";
+import authenticate from "./Components/authentication/authenticate";
 
 class App extends Component {
   constructor(props) {
@@ -39,5 +40,7 @@ class App extends Component {
     );
   }
 }
+
+const newComponent = authenticate(App);
 
 export default App;
