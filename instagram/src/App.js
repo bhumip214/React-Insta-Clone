@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import dummyData from "./dummy-data";
-
-import SearchBar from "./Components/SearchBar/SearchBar";
-import PostList from "./Components/PostContainer/PostList";
+import PostsPage from "./Components/PostContainer/PostsPage";
 
 class App extends Component {
   constructor(props) {
@@ -13,6 +11,7 @@ class App extends Component {
       searchInputValue: ""
     };
   }
+
   componentDidMount() {
     this.setState({ instaPosts: dummyData });
   }
@@ -31,11 +30,11 @@ class App extends Component {
 
     return (
       <div className="App">
-        <SearchBar
+        <PostsPage
           handleSearchInput={this.handleSearchInput}
-          searchInputValue={this.state.searchValue}
+          searchInputValue={this.state.searchInputValue}
+          posts={filterPosts}
         />
-        <PostList posts={filterPosts} />
       </div>
     );
   }
