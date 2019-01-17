@@ -6,8 +6,6 @@ const authenticate = App => Login =>
     constructor(props) {
       super(props);
       this.state = {
-        username: "",
-        password: "",
         loggedIn: false
       };
     }
@@ -18,32 +16,11 @@ const authenticate = App => Login =>
       });
     }
 
-    handleUserNameChange = event => {
-      this.setState({ username: event.target.value });
-    };
-
-    handlePasswordChange = event => {
-      this.setState({ password: event.target.value });
-    };
-
-    handleSubmit = event => {
-      localStorage.setItem("username", this.state.username);
-      this.setState({ loggedIn: true, username: "" });
-    };
     render() {
-      const username = localStorage.getItem("username");
       if (this.state.loggedIn) {
         return <App />;
       } else {
-        return (
-          <Login
-            username={this.state.username}
-            password={this.state.password}
-            handleSubmit={this.handleSubmit}
-            handleUserNameChange={this.handleUserNameChange}
-            handlePasswordChange={this.handlePasswordChange}
-          />
-        );
+        return <Login />;
       }
     }
   };
