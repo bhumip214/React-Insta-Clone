@@ -31,6 +31,7 @@ const authenticate = App => Login =>
       this.setState({ loggedIn: true, username: "" });
     };
     render() {
+      const username = localStorage.getItem("username");
       if (this.state.loggedIn) {
         return <App />;
       } else {

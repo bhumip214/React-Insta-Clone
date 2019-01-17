@@ -15,7 +15,7 @@ const SearchBar = props => {
           onChange={props.handleSearchInput}
           type="text"
           value={props.searchInputValue}
-          placeholder="Search"
+          placeholder="&#xf002; Search"
         />
       </div>
       <div className="searchBar-icons">
