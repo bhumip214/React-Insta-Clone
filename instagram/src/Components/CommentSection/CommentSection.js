@@ -3,6 +3,39 @@ import PropTypes from "prop-types";
 import Comment from "./Comment";
 import "./Comment.css";
 import moment from "moment";
+import styled from "styled-components";
+
+const CommentsWrapperDiv = styled.div`
+  padding: 10px;
+  font-size: 14px;
+`;
+const ActionIconsDiv = styled.div`
+  font-size: 20px;
+  margin-bottom: 5px;
+`;
+
+const CommentsSectionDiv = styled.div`
+  margin: 10px 0;
+`;
+
+const CommentTimestamp = styled.div`
+  font-size: 12px;
+  color: grey;
+  margin-bottom: 10px;
+`;
+
+const StyledHr = styled.hr`
+  background-color: rgb(228, 228, 228);
+  height: 1px;
+  border: 0;
+`;
+
+const CommentInput = styled.input`
+  width: 92%;
+  margin: 8px;
+  border: none;
+  font-size: 14px;
+`;
 
 class CommentSection extends React.Component {
   constructor(props) {
@@ -46,36 +79,35 @@ class CommentSection extends React.Component {
 
   render() {
     return (
-      <div className="comment-section">
-        <div className="comment-action-icons">
+      <CommentsWrapperDiv>
+        <ActionIconsDiv>
           <i
             onClick={this.handleLike}
             className={
               this.state.userLiked
-                ? "comment-heart fas fa-heart"
-                : "comment-heart far fa-heart"
+                ? "heart-icon fas fa-heart"
+                : "heart-icon far fa-heart"
             }
             style={{ color: this.state.userLiked ? "red" : "" }}
           />
           <i className="far fa-comment" />
-        </div>
-        <strong className="comment-likes">{this.state.likes} likes</strong>
+        </ActionIconsDiv>
+        <strong>{this.state.likes} likes</strong>
 
-        <div className="comments">
+        <CommentsSectionDiv>
           {this.state.comments.map(comment => {
             return <Comment comment={comment} />;
           })}
-        </div>
+        </CommentsSectionDiv>
 
-        <div className="comment-timestamp" title={this.props.timestamp}>
+        <CommentTimestamp title={this.props.timestamp}>
           {moment(this.props.timestamp, "MMMM Do YYYY, h:mm:ss a").fromNow()}
-        </div>
+        </CommentTimestamp>
 
-        <hr className="hr" />
+        <StyledHr />
         <form onSubmit={this.addNewComment}>
-          <input
+          <CommentInput
             onChange={this.handleNewComment}
-            className="comment-input"
             type="text"
             name="comment"
             value={this.state.newComment}
@@ -84,7 +116,7 @@ class CommentSection extends React.Component {
           />
           <i className="fas fa-ellipsis-h" />
         </form>
-      </div>
+      </CommentsWrapperDiv>
     );
   }
 }
