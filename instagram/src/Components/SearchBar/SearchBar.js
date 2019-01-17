@@ -1,16 +1,55 @@
 import React from "react";
 import "./SearchBar.css";
+import styled from "styled-components";
+
+const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 200px 15px;
+  font-size: 25px;
+  align-items: center;
+  border-bottom: 1px solid rgb(187, 186, 186);
+`;
+
+const LogoHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const HeaderH1 = styled.h1`
+  font-size: 40px;
+  font-family: "Cookie", cursive;
+  font-weight: 350;
+  margin: 10px;
+  margin-left: 15px;
+`;
+
+const SearchInput = styled.input`
+  width: 220px;
+  font-size: 14px;
+  text-align: center;
+  padding: 2px;
+  font-family: FontAwesome;
+`;
+
+const HeaderIcons = styled.div`
+  display: flex;
+  font-size: 20px;
+  width: 120px;
+  justify-content: space-between;
+  color: grey;
+`;
 
 const SearchBar = props => {
   return (
-    <div className="searchBar">
-      <div className="logo-header">
-        <i className="logo fab fa-instagram" />
+    <Header>
+      <LogoHeader>
+        <i className="insta-logo fab fa-instagram" />
         <hr />
-        <h1>Instagram</h1>
-      </div>
+        <HeaderH1>Instagram</HeaderH1>
+      </LogoHeader>
       <div>
-        <input
+        <SearchInput
           className="search-input"
           onChange={props.handleSearchInput}
           type="text"
@@ -18,7 +57,7 @@ const SearchBar = props => {
           placeholder="&#xf002; Search"
         />
       </div>
-      <div className="searchBar-icons">
+      <HeaderIcons>
         <div className="social">
           <i className="far fa-compass" />
         </div>
@@ -28,8 +67,8 @@ const SearchBar = props => {
         <div className="social">
           <i className="far fa-user" />
         </div>
-      </div>
-    </div>
+      </HeaderIcons>
+    </Header>
   );
 };
 
