@@ -1,7 +1,7 @@
 import React from "react";
 import dummyData from "../../dummy-data";
 import SearchBar from "../SearchBar/SearchBar";
-import PostList from "./PostList";
+import PostsContainer from "./PostsContainer";
 
 class PostsPage extends React.Component {
   constructor() {
@@ -31,12 +31,12 @@ class PostsPage extends React.Component {
     const username = localStorage.getItem("username");
 
     return (
-      <div className="posts-page">
+      <div>
         <SearchBar
           handleSearchInput={this.state.handleSearchInput}
           searchInputValue={this.state.searchInputValue}
         />
-        <PostList posts={filterPosts} />
+        <PostsContainer posts={filterPosts} />
       </div>
     );
   }

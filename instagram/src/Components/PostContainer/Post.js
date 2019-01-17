@@ -2,25 +2,46 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Post.css";
 import CommentSection from "../CommentSection/CommentSection";
+import styled from "styled-components";
+
+const PostWrapperDiv = styled.div`
+  border: 1px solid #d3d3d3;
+  margin: 40px 0;
+`;
+
+const PostHeader = styled.div`
+  display: flex;
+  padding: 10px;
+  align-items: center;
+`;
+
+const UserThumbnail = styled.img`
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  text-align: center;
+`;
+
+const Username = styled.h4`
+  margin: 0;
+  margin-left: 10px;
+  font-size: 16px;
+`;
+
+const PostImage = styled.img`
+  width: 100%;
+`;
 
 function Post(props) {
   return (
-    <div className="post">
-      <div className="post-header">
-        <img
-          alt="post header"
-          className="post-thumb"
-          src={props.post.thumbnailUrl}
-        />
-        <h4 className="post-username">{props.post.username}</h4>
-      </div>
+    <PostWrapperDiv>
+      <PostHeader>
+        <UserThumbnail alt="post header" src={props.post.thumbnailUrl} />
+        <Username>{props.post.username}</Username>
+      </PostHeader>
 
       <div className="post-image">
-        <img
-          alt="post thumbnail"
-          className="post-image"
-          src={props.post.imageUrl}
-        />
+        <PostImage alt="post thumbnail" src={props.post.imageUrl} />
       </div>
 
       <CommentSection
@@ -28,7 +49,7 @@ function Post(props) {
         likes={props.post.likes}
         timestamp={props.post.timestamp}
       />
-    </div>
+    </PostWrapperDiv>
   );
 }
 Post.propTypes = {
