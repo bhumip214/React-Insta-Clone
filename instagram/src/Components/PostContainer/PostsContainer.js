@@ -11,8 +11,8 @@ const PostsContainerDiv = styled.div`
 function PostsContainer(props) {
   return (
     <PostsContainerDiv>
-      {props.posts.map(post => {
-        return <Post post={post} />;
+      {props.posts.map((post, index) => {
+        return <Post post={post} key={index} />;
       })}
     </PostsContainerDiv>
   );

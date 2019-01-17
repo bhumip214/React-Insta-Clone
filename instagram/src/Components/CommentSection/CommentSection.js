@@ -95,8 +95,8 @@ class CommentSection extends React.Component {
         <strong>{this.state.likes} likes</strong>
 
         <CommentsSectionDiv>
-          {this.state.comments.map(comment => {
-            return <Comment comment={comment} />;
+          {this.state.comments.map((comment, index) => {
+            return <Comment comment={comment} key={index} />;
           })}
         </CommentsSectionDiv>
 

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./App.css";
-import dummyData from "./dummy-data";
 
 import PostsPage from "./Components/PostContainer/PostsPage";
 import Login from "./Components/Login/Login";

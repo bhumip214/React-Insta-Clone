@@ -69,7 +69,6 @@ class Login extends React.Component {
   };
 
   render() {
-    const username = localStorage.getItem("username");
     return (
       <LoginWrapperDiv>
         <div>

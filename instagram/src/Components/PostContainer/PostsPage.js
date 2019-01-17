@@ -28,12 +28,10 @@ class PostsPage extends React.Component {
         .includes(this.state.searchInputValue.toLowerCase());
     });
 
-    const username = localStorage.getItem("username");
-
     return (
       <div>
         <SearchBar
-          handleSearchInput={this.state.handleSearchInput}
+          handleSearchInput={this.handleSearchInput}
           searchInputValue={this.state.searchInputValue}
         />
         <PostsContainer posts={filterPosts} />

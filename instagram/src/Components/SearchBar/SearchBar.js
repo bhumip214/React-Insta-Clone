@@ -26,10 +26,10 @@ const HeaderH1 = styled.h1`
 
 const SearchInput = styled.input`
   width: 220px;
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
   padding: 2px;
-  font-family: FontAwesome;
+  font-family: "FontAwesome", "Calibri";
 `;
 
 const HeaderIcons = styled.div`
@@ -50,7 +50,6 @@ const SearchBar = props => {
       </LogoHeader>
       <div>
         <SearchInput
-          className="search-input"
           onChange={props.handleSearchInput}
           type="text"
           value={props.searchInputValue}

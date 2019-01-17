@@ -1,5 +1,4 @@
 import React from "react";
-import Login from "../Login/Login";
 
 const authenticate = App => Login =>
   class extends React.Component {
