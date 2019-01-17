@@ -1,5 +1,49 @@
 import React from "react";
 import "./Login.css";
+import styled from "styled-components";
+
+const LoginWrapperDiv = styled.div`
+  width: 500px;
+  margin: 0 auto;
+  padding: 60px;
+`;
+
+const HeaderH1 = styled.h1`
+  font-size: 60px;
+  font-family: "Cookie", cursive;
+  font-weight: 350;
+  margin: 10px;
+  margin-left: 15px;
+  text-align: center;
+`;
+
+const Form = styled.form`
+  margin: 0 auto;
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+`;
+
+const Input = styled.input`
+  font-size: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+`;
+
+const Button = styled.button`
+  font-size: 20px;
+  padding: 10px;
+  width: 25%;
+  border-radius: 5px;
+  background-color: rgb(0, 162, 255);
+  color: white;
+
+  &&:hover {
+    background-color: rgb(0, 137, 228);
+    color: white;
+  }
+`;
 
 class Login extends React.Component {
   constructor(props) {
@@ -27,33 +71,27 @@ class Login extends React.Component {
   render() {
     const username = localStorage.getItem("username");
     return (
-      <div className="login">
-        <div className="login-header">
-          <div className="logo-header">
-            <h1 className="login-h1">Instagram</h1>
-          </div>
+      <LoginWrapperDiv>
+        <div>
+          <HeaderH1>Instagram</HeaderH1>
         </div>
 
         <div>
-          <form className="login-form" onSubmit={this.handleSubmit}>
-            <input
-              className="login-input"
+          <Form className="login-form" onSubmit={this.handleSubmit}>
+            <Input
               type="text"
               value={this.username}
               placeholder="Username"
               onChange={this.handleUserNameChange}
             />
-            <input
-              className="login-input"
+            <Input
               type="password"
               value={this.password}
               placeholder="Password"
               onChange={this.handlePasswordChange}
             />
-            <button className="login-btn" type="submit">
-              Log in
-            </button>
-          </form>
+            <Button type="submit">Log in</Button>
+          </Form>
         </div>
         <div>
           <p>
@@ -63,7 +101,7 @@ class Login extends React.Component {
             </span>
           </p>
         </div>
-      </div>
+      </LoginWrapperDiv>
     );
   }
 }
